@@ -20,6 +20,7 @@ a {
 }
 button {
     border: none;
+    border-radius: 6px;
 }
 button:hover {
     cursor: pointer;
@@ -33,6 +34,11 @@ input[type=submit] {
 input {
     border: none;
     background-color: rgb(233, 233, 233);
+}
+.web-page {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 /* popup forms */
@@ -50,12 +56,12 @@ input {
     width: 70%;
     max-width: 500px;
     flex-wrap: wrap;
-    padding: 100px 20px;
+    padding: 20px 20px;
     display: flex;
     justify-content: center;
     border-radius: 7px;
     text-align: center;
-    margin-top: 200px;
+    margin-top: 100px;
 }
 .popup form {
     display: flex;
@@ -71,33 +77,6 @@ input {
     margin: 4px 0;
 }
 
-/* login form */
-.form-container.login div {
-    width: 200px;
-    margin: 20px 10px;
-}
-.login img {
-    margin-top: 50px;
-    width: 200px;
-    height: 130px;
-}
-.login form {
-    margin-top: 20px;
-}
-.login input[type=submit] {
-    margin-top: 20px;
-    margin-bottom: 10px;
-    width: 190px;
-    background-color: rgb(85, 219, 103);
-    color: white;
-}
-.login .login-form {
-    padding-left: 20px;
-}
-.login a {
-    font-size: 11px;
-    color: rgb(121, 121, 121);
-}
 
 
 /* header.ejs */
@@ -131,3 +110,84 @@ nav .login-link button {
 nav .login-link button:hover {
     background: rgb(73, 73, 73);
 }
+
+
+
+/* login form */
+.form-container.login {
+    padding-bottom: 50px;
+}
+.form-container.login div {
+    width: 200px;
+    margin: 20px 10px;
+}
+.login img {
+    margin-top: 50px;
+    width: 200px;
+    height: 130px;
+}
+.login form {
+    margin-top: 20px;
+}
+.login input[type=submit] {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: 190px;
+    background-color: rgb(85, 219, 103);
+    color: white;
+}
+.login .login-form {
+    padding-left: 20px;
+}
+.login a {
+    font-size: 11px;
+    color: rgb(121, 121, 121);
+}
+
+
+/* index.ejs */
+.landing .con-1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.landing .con-1 .left, .landing .con-1 .right {
+    width: 400px;
+    margin: 20px 15px;
+    display: flex;
+    justify-content: center;
+}
+.landing .con-1 .right {
+    font-size: 40px;
+    text-align: left;
+    flex-direction: column;
+    margin-left: 20px;
+}
+.landing .con-1 .right button {
+    width: 40%;
+    margin: 10px auto;
+    margin-top: 50px;
+    padding: 5px 7px;
+}
+.landing .con-1 .left div {
+    height: 300px;
+    width: 200px;
+    margin: 0px 6px;
+    box-sizing: border-box;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0px 5px;
+}
+.landing .con-1 .left div:first-child {
+    background-color: rgb(116, 106, 146);
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+.landing .con-1 .left div:nth-child(2) {
+    background-color: rgb(149, 204, 189);
+    border-top-right-radius: 50px;
+}
+

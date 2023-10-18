@@ -3,10 +3,16 @@
     <div class="web-page landing">
         <div class="container con-1">
             <div class="left">
-
+                <div>
+                    Print or export your data with ease
+                </div>
+                <div>
+                    Easily edit rows of data
+                </div>
             </div>
-            <div class="rigth">
-
+            <div class="right">
+                <p>Form tables to help keep your work life organized :)</p>
+                <button onclick="openPopUp(event)" class="signup">Sign Up</button>
             </div>
         </div>
     </div>
@@ -23,6 +29,24 @@
                     <input type="password" name="password" placeholder="&#x1F512;  Password" required>
                     <input type="submit" value="LOGIN">
                     <a href="/login-help">Forgot Username/Password?</a>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="popup signup" id="signup" onclick="closePopUp(event)">
+        <div class="form-container signup">
+            <div>
+                
+            </div>
+            <div class="login-form">
+                <h4>Sign up with an Email</h4>
+                <form action="/signup" method="POST">
+
+                    <input type="text" name="name" placeholder="Name" required>
+                    <input type="email" name="email" placeholder="&#9993;   Email" required>
+                    <input type="password" name="password" placeholder="&#x1F512;  Password" required>
+                    <input type="submit" value="Create Account">
 
                 </form>
             </div>
