@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+html {
+    height: 100%;
+}
+body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+button {
+    border: none;
+}
+button:hover {
+    cursor: pointer;
+}
+input[type=submit] {
+    cursor: pointer;
+}
+*:focus {
+    outline: none;
+}
+input {
+    border: none;
+    background-color: rgb(233, 233, 233);
+}
+
+/* popup forms */
+.popup {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.411);
+    position: fixed;
+    display: none;
+    z-index: 10;
+}
+.popup .form-container {
+    background-color: white;
+    margin: 0px auto;
+    width: 70%;
+    max-width: 500px;
+    flex-wrap: wrap;
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+    border-radius: 7px;
+    text-align: center;
+    margin-top: 200px;
+}
+.popup form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.popup input {
+    font-size: 12px;
+    width: 170px;
+    padding: 6px 14px;
+    border-radius: 18px;
+    margin: 4px 0;
+}
+
+/* login form */
+.form-container.login div {
+    width: 200px;
+    margin: 20px 10px;
+}
+.login img {
+    width: 200px;
+    height: 130px;
+}
+.login form {
+    margin-top: 20px;
+}
+.login input[type=submit] {
+    margin-top: 20px;
+    width: 170px;
+    background-color: rgb(85, 219, 103);
+    color: white;
+}
+.login .login-form {
+    padding-left: 20px;
+}
+
+
+/* header.ejs */
+nav .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    padding: 0 20px;
+    max-width: 1000px;
+}
+nav .links {
+    margin-left: auto;
+}
+nav .links a {
+    margin: 0 20px;
+}
+nav .links a:hover {
+    border-bottom: 3px solid rgb(64, 228, 151);
+}
+nav .login-link {
+    padding-left: 70px;
+    padding-right: 40px;
+}
+nav .login-link button {
+    background: rgb(0, 0, 0);
+    padding: 4px 10px;
+    border-radius: 5px;
+    color: white;
+}
+nav .login-link button:hover {
+    background: rgb(73, 73, 73);
+}
