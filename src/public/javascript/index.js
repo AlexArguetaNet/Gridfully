@@ -5,8 +5,6 @@ window.onload = () => {
 
         var popupElements = document.getElementsByClassName('popup');
 
-        console.log(popupElements);
-
     } catch (err) {
         console.log(err);
     }

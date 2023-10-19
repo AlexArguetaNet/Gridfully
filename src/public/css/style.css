@@ -114,34 +114,37 @@ nav .login-link button:hover {
 
 
 /* login form */
-.form-container.login {
+.form-container.user-form {
     padding-bottom: 50px;
 }
-.form-container.login div {
+.form-container.user-form div {
     width: 200px;
     margin: 20px 10px;
 }
-.login img {
+.user-form img {
     margin-top: 50px;
     width: 200px;
     height: 130px;
 }
-.login form {
+.user-form form {
     margin-top: 20px;
 }
-.login input[type=submit] {
+.user-form input[type=submit] {
     margin-top: 20px;
     margin-bottom: 10px;
     width: 190px;
     background-color: rgb(85, 219, 103);
     color: white;
 }
-.login .login-form {
+.user-form .login-form {
     padding-left: 20px;
 }
-.login a {
+.user-form a {
     font-size: 11px;
     color: rgb(121, 121, 121);
+}
+.user-form a:hover {
+    text-decoration: underline;
 }
 
 
@@ -182,7 +185,7 @@ nav .login-link button:hover {
     padding: 0px 5px;
 }
 .landing .con-1 .left div:first-child {
-    background-color: rgb(116, 106, 146);
+    background-color: rgb(121, 114, 145);
     border-top-left-radius: 50px;
     border-bottom-right-radius: 50px;
 }

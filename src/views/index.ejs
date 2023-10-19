@@ -11,13 +11,13 @@
                 </div>
             </div>
             <div class="right">
-                <p>Form tables to help keep your work life organized :)</p>
+                <p>Form tables to help keep your work life organized. Create a free account today!</p>
                 <button onclick="openPopUp(event)" class="signup">Sign Up</button>
             </div>
         </div>
     </div>
     <div class="popup login" onclick="closePopUp(event)">
-        <div class="form-container login">
+        <div class="form-container user-form">
             <div>
                 <img src="/images/icon-login.png" alt="login">
             </div>
@@ -34,23 +34,25 @@
             </div>
         </div>
     </div>
-    <div class="popup signup" id="signup" onclick="closePopUp(event)">
-        <div class="form-container signup">
+    <div class="popup signup" onclick="closePopUp(event)">
+        <div class="form-container user-form">
             <div>
-                
+                <img src="/images/icon-login.png" alt="login">
             </div>
             <div class="login-form">
-                <h4>Sign up with an Email</h4>
-                <form action="/signup" method="POST">
+                <h4>Sign up with Email</h4>
+                <form action="/create-account" method="POST">
 
-                    <input type="text" name="name" placeholder="Name" required>
+                    <input type="text" name="name" placeholder="Username" required>
                     <input type="email" name="email" placeholder="&#9993;   Email" required>
                     <input type="password" name="password" placeholder="&#x1F512;  Password" required>
                     <input type="submit" value="Create Account">
+                    
 
                 </form>
             </div>
         </div>
     </div>
+    
 
 <%- include('./partials/footer.ejs') %>
