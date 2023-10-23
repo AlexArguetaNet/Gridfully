@@ -13,6 +13,8 @@ body {
     display: flex;
     flex-direction: column;
     z-index: 1;
+    background-color: rgb(71, 69, 97);
+    color: white;
 }
 a {
     text-decoration: none;
@@ -36,7 +38,7 @@ input {
     background-color: rgb(233, 233, 233);
 }
 .web-page {
-    width: 90%;
+    width: 98%;
     max-width: 1100px;
     margin: 0 auto;
 }
@@ -76,6 +78,9 @@ input {
     border-radius: 18px;
     margin: 4px 0;
 }
+.popup h4 {
+    color: rgb(121, 114, 145);
+}
 
 
 
@@ -90,6 +95,9 @@ nav .content {
 }
 nav .links {
     margin-left: auto;
+}
+nav a {
+    color: white;
 }
 nav .links a {
     margin: 0 20px;
@@ -156,7 +164,7 @@ nav .login-link button:hover {
 }
 .landing .con-1 .left, .landing .con-1 .right {
     width: 400px;
-    margin: 20px 15px;
+    margin: 20px 0px;
     display: flex;
     justify-content: center;
 }

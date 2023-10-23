@@ -1,6 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const session = require('express-session');
 const indexRouter = require('./routers/index');
+const userRouter = require('./routers/user');
 require('dotenv').config();
 
 const app = express();
@@ -12,6 +14,7 @@ app.use(express.static('src/public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(indexRouter);
+app.use('/user', userRouter);
 
 mongoose.connect(process.env.MONGO_URI)
 .then(() => {
