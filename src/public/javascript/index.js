@@ -25,9 +25,15 @@ const openPopUp = (event) => {
 // Closes a popup form container
 const closePopUp = (event) => {
 
-    if (event.target.classList.contains('popup')) {
+    if (event.target.classList.contains('close-button')) {
+        var popupElement = document.getElementsByClassName(`popup ${event.target.classList[1]}`)[0];
+        popupElement.style.display = 'none';
+    } else if (event.target.classList.contains('popup')) {
         event.target.style.display = 'none';
     }
 
 }
+
+
+
 

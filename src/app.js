@@ -10,11 +10,19 @@ app.set('view engine', 'ejs');
 app.set('views', 'src/views');
 const PORT = process.env.PORT;
 
+app.use(session({
+    secret: process.env.secret,
+    resave: false,
+    saveUninitialized: false,
+    cookie: { maxAge: 60*60*1000 }
+}));
+
 app.use(express.static('src/public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(indexRouter);
 app.use('/user', userRouter);
+
 
 mongoose.connect(process.env.MONGO_URI)
 .then(() => {
