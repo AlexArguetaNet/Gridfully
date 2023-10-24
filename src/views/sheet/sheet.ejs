@@ -1,20 +1,29 @@
 <%- include('../partials/header.ejs') %>
 
     <div class="sheet-page">
+        <form action="">
+            <% 
+                if (locals.sheet) {
+                    var name = sheet.name;
+                } else {
+                    var name = 'New Sheet';
+                }
+            %>
+            <input id="sheet-title" type="text" name="name" value="<%- name %>">
+            <div class="sheet-table">
 
-        <div class="sheet-table">
-
-            <button onclick="newColumn()">+ Column</button>
-            <form action="">
+                <button onclick="newColumn(event)">+ Column</button>
 
                 <table id="sheet">
-                    <th>
-                        <input type="text">
-                    </th>
-                </table>
+                
 
-            </form>
-        </div>
+                    
+                </table>
+        
+                <button onclick="newEntry(event)">+ Entry</button>
+            </div>
+
+        </form>
 
     </div>
 

@@ -37,13 +37,41 @@ const closePopUp = (event) => {
 
 // Creates new column
 const newColumn = (event) => {
+    
+    event.preventDefault();
 
     const tableElem = document.getElementById('sheet');
     
     var newColumn = document.createElement('th');
-    newColumn.innerHTML += '<input type="text">';
+    newColumn.innerHTML += '<input class="column-heading" type="text">';
 
     tableElem.appendChild(newColumn);
+
+}
+
+// Creates a new entry
+const newEntry = (event) => {
+
+    event.preventDefault();
+
+    // Get the number of columns
+    const tableElem = document.getElementById('sheet');
+    const columnCount = tableElem.getElementsByTagName('th').length;
+    
+    const newEntry = document.createElement('tr');
+    newEntry.setAttribute('class', 'entry');
+
+    for (var i = 0; i < columnCount; i++) {
+
+        var cell = document.createElement('td');
+        cell.setAttribute('class', 'cell');
+        cell.innerHTML += `<input type="text">`;
+        newEntry.appendChild(cell);
+
+    }
+
+    tableElem.appendChild(newEntry);
+
 
 }
 

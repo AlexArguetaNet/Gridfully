@@ -2,7 +2,11 @@
 // GET: Get the page to edit a sheet
 const getSheet = (req, res, next) => {
 
-    res.locals.loggedIn = true;
+    if (req.session.user) {
+        res.locals.loggedIn = true;
+        res.locals.userId = req.session.user._id;
+    }
+    
     res.render('sheet/sheet');
 
 }
