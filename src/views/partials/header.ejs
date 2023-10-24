@@ -16,8 +16,18 @@
                 <a href="/about">About Us</a>
                 <a href="/contact">Contact</a>
             </div>
-            <div class="login-link">
-                <button onclick="openPopUp(event)" class="login">Login</button>
+            <div class="login-link account-button">
+                <% if (locals.loggedIn) { %>
+                    <div class="account-menu">
+                        <img src="/images/icon-user.png" alt="icon-user">
+                        <div class="list">  
+                            <a href="/user/profile">Profile</a>
+                            <a href="/user/logout">Logout</a>
+                        </div>
+                    </div>
+                <% } else { %>
+                    <button onclick="openPopUp(event)" class="login">Login</button>
+                <% } %>
             </div>
         </div>
     </nav>

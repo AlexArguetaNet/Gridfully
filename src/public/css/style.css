@@ -35,7 +35,14 @@ input[type=submit] {
 }
 input {
     border: none;
-    background-color: rgb(233, 233, 233);
+    background-color: rgba(0, 0, 0, 0.555);
+    color: white;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s, color 5000s ease-in-out 0s; 
 }
 .web-page {
     width: 98%;
@@ -104,6 +111,7 @@ nav .content {
     margin: 20px auto;
     padding: 0 20px;
     max-width: 1000px;
+    position: relative;
 }
 nav .links {
     margin-left: auto;
@@ -139,6 +147,32 @@ nav .login-link button {
 nav .login-link button:hover {
     background: rgb(73, 73, 73);
 }
+nav .account-button img {
+    width: 30px;
+    height: 30px;
+}
+.account-menu {
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 10px;
+}
+.account-menu .list {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 8px;
+    width: 70px;
+    
+}
+.account-menu .list a { 
+    color: rgb(66, 66, 66);
+}
+.account-menu .list a:first-child {
+    border-bottom: 1px solid rgb(211, 211, 211);
+}
 
 
 
@@ -162,7 +196,7 @@ nav .login-link button:hover {
     margin-top: 20px;
     margin-bottom: 10px;
     width: 190px;
-    background-color: rgb(85, 219, 103);
+    background-color: rgb(133, 185, 171);
     color: white;
 }
 .user-form .login-form {

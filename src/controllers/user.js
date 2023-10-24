@@ -7,6 +7,7 @@ const getHomePage = (req, res, next) => {
     .then((userDoc) => {
 
         req.session.user = userDoc;
+        res.locals.loggedIn = true;
         req.session.save(() => {
             res.render('user/home', { user: userDoc });
         }); 
@@ -15,6 +16,17 @@ const getHomePage = (req, res, next) => {
 
 }
 
-module.exports = {
-    getHomePage
+// GET: Handle logout request
+const logout = (req, res, next) => {
+
+    req.session.destroy(() => {
+        res.redirect('/');
+    });
+
 }
+
+module.exports = {
+    getHomePage,
+    logout
+}
+
