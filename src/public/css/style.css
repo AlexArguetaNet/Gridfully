@@ -92,11 +92,11 @@ input:-webkit-autofill:active {
 .close-button {
     background-color: rgb(255, 55, 105);
     color: white;
-    padding: 5px 10px;
+    padding: 3px 8px;
     border-radius: 100px;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 3px;
+    right: 3px;
     margin-top: 3px;
     margin-right: 5px;
 }
@@ -104,6 +104,10 @@ input:-webkit-autofill:active {
 
 
 /* header.ejs */
+nav {
+    display: block;
+    padding: 0;
+}
 nav .content {
     display: flex;
     justify-content: center;
@@ -151,27 +155,37 @@ nav .account-button img {
     width: 30px;
     height: 30px;
 }
-.account-menu {
-    justify-content: center;
-    align-items: center;
+.profile-dropdown {
     position: absolute;
-    top: 0;
-    right: 10px;
-}
-.account-menu .list {
     display: flex;
-    text-align: center;
     flex-direction: column;
-    background-color: white;
-    border-radius: 8px;
-    width: 70px;
-    
+    align-items: center;
+    padding-bottom: 15px;
+    bottom: -20px;
+    right: 45px;
 }
-.account-menu .list a { 
-    color: rgb(66, 66, 66);
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(233, 242, 255);
+    padding: 7px 5px;
+    width: 100px;
+    z-index: 1;
+    top: 35px;
+    flex-direction: column;
+    border-radius: 7px;
+    text-align: center;
 }
-.account-menu .list a:first-child {
-    border-bottom: 1px solid rgb(211, 211, 211);
+.dropdown-content a {
+    color: rgb(139, 139, 139);
+    border-bottom: 1px solid rgb(192, 192, 192);
+}
+.dropdown-content a:last-child {
+    border-bottom: none;
+    margin-top: 5px;
+}
+.profile-dropdown:hover .dropdown-content {
+    display: flex;
 }
 
 
@@ -225,7 +239,7 @@ nav .account-button img {
 }
 .landing .con-1 .right {
     font-size: 35px;
-    text-align: left;
+    text-align: center;
     flex-direction: column;
     box-sizing: border-box;
     justify-content: center;
@@ -260,3 +274,39 @@ nav .account-button img {
     border-top-right-radius: 50px;
 }
 
+
+/* user pages */
+.user-content {
+    color: black;
+    background-color: white;
+    min-height: 400px;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+.user-content nav a {
+    color: black;
+}
+.sheet-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.user-nav a {
+    color: black;
+}
+.sheet-list img {
+    width: 200px;
+    height: 200px;
+}
+
+/* sheet page */
+.sheet-page {
+    background-color: white;
+    width: 95%;
+    height: 100vh;
+}
+.sheet-table{
+    overflow: scroll;
+}

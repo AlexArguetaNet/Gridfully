@@ -35,5 +35,17 @@ const closePopUp = (event) => {
 }
 
 
+// Creates new column
+const newColumn = (event) => {
+
+    const tableElem = document.getElementById('sheet');
+    
+    var newColumn = document.createElement('th');
+    newColumn.innerHTML += '<input type="text">';
+
+    tableElem.appendChild(newColumn);
+
+}
+
 
 

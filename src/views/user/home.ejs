@@ -1,4 +1,31 @@
 <%- include('../partials/header.ejs') %>
 
+    <div class="web-page home">
+        <div class="container user-content">
+            <nav>
+                <div class="content">
+                    <h4>Your Sheets</h4>
+                    <div class="links">
+                        <a href="/sheet">+ New Sheet</a>
+                    </div>
+                </div>
+            </nav>
+            <div class="sheet-list">
+            
+                <% if (user.forms.length == 0) { %>
+    
+                    <div class="empty">
+                        <img src="/images/icon-empty.png" alt="empty-icon">
+                        <p>You have no sheets right now!</p>
+                    </div>
+    
+                <% } else { %>
+    
+    
+    
+                <% } %>
+            </div>
+        </div>
+    </div>
 
 <%- include('../partials/footer.ejs') %>

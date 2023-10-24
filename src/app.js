@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const indexRouter = require('./routers/index');
 const userRouter = require('./routers/user');
+const sheetRouter = require('./routers/sheet');
 require('dotenv').config();
 
 const app = express();
@@ -22,6 +23,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(indexRouter);
 app.use('/user', userRouter);
+app.use('/sheet', sheetRouter);
 
 
 mongoose.connect(process.env.MONGO_URI)

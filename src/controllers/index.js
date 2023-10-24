@@ -5,10 +5,10 @@ const bcrypt = require('bcrypt');
 const getLandingPage = (req, res) => {
 
     if (req.session.user) {
-        res.redirect(`/user/home/${req.session.user._id}`);
-    } else {
-        res.render('index');
+        res.locals.loggedIn = true;
+        res.locals.userId = req.session.user._id;
     }
+    res.render('index');
     
 }
 
@@ -16,8 +16,14 @@ const getLandingPage = (req, res) => {
 // POST: Sign up for an account
 const createAccount = async (req, res, next) => {
 
+    // Check if a user is logged in
+    if (req.session.user) {
+        req.session.destory;
+    }
+
     // Get request body and hash password
     const newUser = req.body;
+    newUser.forms = [];
     newUser.password = await bcrypt.hash(newUser.password, 10);
 
     // Create new user document in the database
