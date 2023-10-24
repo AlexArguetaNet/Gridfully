@@ -6,7 +6,10 @@ const getHomePage = (req, res, next) => {
     User.findById({ _id: req.params.userId })
     .then((userDoc) => {
 
-        res.render('user/home', { user: userDoc });
+        req.session.user = userDoc;
+        req.session.save(() => {
+            res.render('user/home', { user: userDoc });
+        }); 
 
     });
 

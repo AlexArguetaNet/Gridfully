@@ -3,7 +3,13 @@ const bcrypt = require('bcrypt');
 
 // GET: Get the landing page
 const getLandingPage = (req, res) => {
-    res.render('index');
+
+    if (req.session.user) {
+        res.redirect(`/user/home/${req.session.user._id}`);
+    } else {
+        res.render('index');
+    }
+    
 }
 
 
