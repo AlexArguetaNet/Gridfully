@@ -48,7 +48,7 @@ const newColumn = (event) => {
     } 
     
     var newColumn = document.createElement('td');
-    newColumn.innerHTML += '<input class="column-heading" type="text" name="column">';
+    newColumn.innerHTML += '<input class="column-heading" type="text" name="columns">';
 
     sheetHeading.appendChild(newColumn);
 
@@ -63,6 +63,9 @@ const newEntry = (event) => {
     const tableElem = document.getElementById('sheet');
     const sheetHeading = document.getElementById('sheet-heading');
     const columnCount = sheetHeading.getElementsByTagName('td').length;
+    var entryCount = document.querySelectorAll('.entry').length;
+
+    console.log(entryCount);
 
     if (columnCount == 0) {
 
@@ -75,7 +78,7 @@ const newEntry = (event) => {
     
             var cell = document.createElement('td');
             cell.setAttribute('class', 'cell');
-            cell.innerHTML += `<input type="text" name="entry${i}">`;
+            cell.innerHTML += `<input type="text" name="entry${entryCount}">`;
             newEntry.appendChild(cell);
     
         }
