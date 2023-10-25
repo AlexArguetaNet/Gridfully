@@ -12,7 +12,7 @@
             </nav>
             <div class="sheet-list">
             
-                <% if (user.forms.length == 0) { %>
+                <% if (sheets.length == 0) { %>
     
                     <div class="empty">
                         <img src="/images/icon-empty.png" alt="empty-icon">
@@ -21,7 +21,17 @@
     
                 <% } else { %>
     
-    
+                    <div class="list">
+
+                        <% sheets.forEach((sheet) => { %>
+
+                            <div class="list-item">
+                                <a href="/sheet/<%- sheet._id %>"><%- sheet.name %></a>
+                            </div>
+
+                        <% }); %>
+
+                    </div>
     
                 <% } %>
             </div>

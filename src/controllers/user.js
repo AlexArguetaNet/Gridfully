@@ -1,7 +1,13 @@
 const User = require('../models/user');
+const Sheet = require('../models/sheet');
 
 // GET: Get the user's home page
-const getHomePage = (req, res, next) => {
+const getHomePage = async (req, res, next) => {
+
+    const userId = req.params.userId;
+
+    const sheets = await Sheet.find({ user_id: userId });
+    console.log(sheets);
 
     User.findById({ _id: req.params.userId })
     .then((userDoc) => {
@@ -10,7 +16,7 @@ const getHomePage = (req, res, next) => {
         res.locals.loggedIn = true;
         res.locals.userId = userDoc._id;
         req.session.save(() => {
-            res.render('user/home', { user: userDoc });
+            res.render('user/home', { user: userDoc, sheets: sheets });
         }); 
 
     });

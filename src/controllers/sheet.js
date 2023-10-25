@@ -43,11 +43,16 @@ const createSheet = (req, res, next) => {
 // POST: Update sheet
 const updateSheet = (req, res, next) => {
 
+    // TODO: Finish implementing update feature
+
+    const { name, columns } = req.body;
+
+    delete req.body.name;
+    delete req.body.columns;
+
     console.log(req.body);
 
-
-
-    res.redirect('/sheet');
+    res.redirect('/');
 
 }
 
