@@ -6,8 +6,6 @@ const getHomePage = (req, res, next) => {
     User.findById({ _id: req.params.userId })
     .then((userDoc) => {
 
-        console.log(userDoc);
-
         req.session.user = userDoc;
         res.locals.loggedIn = true;
         res.locals.userId = userDoc._id;

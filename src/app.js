@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const session = require('express-session');
+const methodOverride = require('method-override');
 const indexRouter = require('./routers/index');
 const userRouter = require('./routers/user');
 const sheetRouter = require('./routers/sheet');
@@ -22,6 +23,7 @@ app.use(express.static('src/public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(indexRouter);
+app.use(methodOverride('_method'));
 app.use('/user', userRouter);
 app.use('/sheet', sheetRouter);
 

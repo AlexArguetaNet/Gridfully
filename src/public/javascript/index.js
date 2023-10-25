@@ -1,16 +1,4 @@
 
-window.onload = () => {
-
-    try {
-
-        var popupElements = document.getElementsByClassName('popup');
-
-    } catch (err) {
-        console.log(err);
-    }
-
-}
-
 // Opens a popup form container
 const openPopUp = (event) => {
 
@@ -53,14 +41,14 @@ const newColumn = (event) => {
         for (var i = 0; i < entires.length; i++) {
             var cell = document.createElement('td');
             cell.setAttribute('class', 'cell');
-            cell.innerHTML += `<input type="text">`;
+            cell.innerHTML += `<input type="text" name="entry${i}">`;
             entires[i].appendChild(cell);
         }
 
     } 
     
     var newColumn = document.createElement('td');
-    newColumn.innerHTML += '<input class="column-heading" type="text">';
+    newColumn.innerHTML += '<input class="column-heading" type="text" name="column">';
 
     sheetHeading.appendChild(newColumn);
 
@@ -87,7 +75,7 @@ const newEntry = (event) => {
     
             var cell = document.createElement('td');
             cell.setAttribute('class', 'cell');
-            cell.innerHTML += `<input type="text">`;
+            cell.innerHTML += `<input type="text" name="entry${i}">`;
             newEntry.appendChild(cell);
     
         }

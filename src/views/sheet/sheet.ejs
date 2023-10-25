@@ -1,7 +1,7 @@
 <%- include('../partials/header.ejs') %>
 
     <div class="sheet-page">
-        <form action="">
+        <form action="/sheet/update?_method=PUT" method="POST">
             <% 
                 if (locals.sheet) {
                     var name = sheet.name;
@@ -10,6 +10,7 @@
                 }
             %>
             <input id="sheet-title" type="text" name="name" value="<%- name %>">
+            <input type="submit" value="Save">
             <div class="sheet-table">
 
                 <button onclick="newColumn(event)">+ Column</button>
@@ -18,7 +19,7 @@
                 
                     <tr id="sheet-heading">
 
-                    
+                        
 
                     </tr>
                     
