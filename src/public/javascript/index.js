@@ -40,12 +40,29 @@ const newColumn = (event) => {
     
     event.preventDefault();
 
+    const sheetHeading = document.getElementById('sheet-heading');
     const tableElem = document.getElementById('sheet');
+    const entryCount = tableElem.getElementsByTagName('tr').length - 1;
+
+    // Check if there are entires
+    if (entryCount > 0) {
+
+        // Get each row and append a text input element
+        const entires = document.getElementsByClassName('entry');
+
+        for (var i = 0; i < entires.length; i++) {
+            var cell = document.createElement('td');
+            cell.setAttribute('class', 'cell');
+            cell.innerHTML += `<input type="text">`;
+            entires[i].appendChild(cell);
+        }
+
+    } 
     
-    var newColumn = document.createElement('th');
+    var newColumn = document.createElement('td');
     newColumn.innerHTML += '<input class="column-heading" type="text">';
 
-    tableElem.appendChild(newColumn);
+    sheetHeading.appendChild(newColumn);
 
 }
 
@@ -56,23 +73,29 @@ const newEntry = (event) => {
 
     // Get the number of columns
     const tableElem = document.getElementById('sheet');
-    const columnCount = tableElem.getElementsByTagName('th').length;
+    const sheetHeading = document.getElementById('sheet-heading');
+    const columnCount = sheetHeading.getElementsByTagName('td').length;
+
+    if (columnCount == 0) {
+
+    } else {
+
+        const newEntry = document.createElement('tr');
+        newEntry.setAttribute('class', 'entry');
     
-    const newEntry = document.createElement('tr');
-    newEntry.setAttribute('class', 'entry');
-
-    for (var i = 0; i < columnCount; i++) {
-
-        var cell = document.createElement('td');
-        cell.setAttribute('class', 'cell');
-        cell.innerHTML += `<input type="text">`;
-        newEntry.appendChild(cell);
+        for (var i = 0; i < columnCount; i++) {
+    
+            var cell = document.createElement('td');
+            cell.setAttribute('class', 'cell');
+            cell.innerHTML += `<input type="text">`;
+            newEntry.appendChild(cell);
+    
+        }
+    
+        tableElem.appendChild(newEntry);
 
     }
-
-    tableElem.appendChild(newEntry);
-
-
+    
 }
 
 

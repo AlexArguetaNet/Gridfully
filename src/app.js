@@ -12,7 +12,7 @@ app.set('views', 'src/views');
 const PORT = process.env.PORT;
 
 app.use(session({
-    secret: process.env.secret,
+    secret: process.env.SECRET,
     resave: false,
     saveUninitialized: false,
     cookie: { maxAge: 60*60*1000 }
