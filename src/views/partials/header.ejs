@@ -13,24 +13,24 @@
         <div class="content">
             <a href="/">Gridfully</a>
             <div class="links">
-                <% 
-                    if (locals.loggedIn === undefined) {
-                        var homePath = '/';
-                    } else {
-                        var homePath = `/user/home/${locals.userId}`;
-                    }
-                %>
-                <a href="<%- homePath %>"><i class="fa-solid fa-house"></i> Home</a>
                 <a href="/about">About Us</a>
                 <a href="/contact">Contact</a>
             </div>
             <div class="login-link account-button">
-                <% if (locals.loggedIn) { %>
-                    <div class="profile-dropdown">
-                        <img src="/images/icon-user.png" alt="icon-user">
-                        <div class="dropdown-content">  
+                            <% if (locals.loggedIn) { %>
+                                <div class="profile-dropdown">
+                                    <img src="/images/icon-user.png" alt="icon-user">
+                                    <div class="dropdown-content"> 
+                                        <% 
+                                if (locals.loggedIn === undefined) {
+                                    var homePath = '/';
+                                } else {
+                                    var homePath = `/user/home/${locals.userId}`;
+                                }
+                            %>
+                            <a href="<%- homePath %>"><i class="fa-solid fa-house"></i> Home</a> 
                             <a href="/user/profile">Profile</a>
-                            <a href="/user/logout">Logout</a>
+                            <a href="/user/logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
                         </div>
                     </div>
                 <% } else { %>
