@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap');
 
+.fa-table-cells {
+    color: rgb(193, 193, 193);
+    font-weight: lighter;
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -284,7 +290,10 @@ nav .account-button img {
     min-height: 400px;
     width: 100%;
     margin-top: 20px;
-    border-radius: 5px;
+    border-radius: 3px;
+}
+.home nav {
+    padding: 4px 0px;
 }
 .user-content nav a {
     color: black;
@@ -295,12 +304,33 @@ nav .account-button img {
     justify-content: center;
     align-items: center;
 }
-.user-nav a {
-    color: black;
+.home .content p {
+    font-size: 25px;
 }
 .sheet-list img {
     width: 200px;
     height: 200px;
+}
+.list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: left;
+}
+.list .list-item {
+    border-bottom: 1px solid rgb(227, 227, 227);
+    box-sizing: border-box;
+    padding: 4px 0px;
+    padding-left: 30px;
+    margin: 0px 20px;
+    display: flex;
+    align-items: center;
+}
+.list-item i {
+    margin-right: 10px;
+}
+.list a:hover {
+    background-color: rgb(246, 245, 255);
 }
 
 /* sheet page */
@@ -358,6 +388,8 @@ nav .account-button img {
     color: black;
     font-size: 13px;
     padding: 5px 0px;
+    padding-left: 5px;
+    box-sizing: border-box;
 }
 .entry input:hover {
     background-color: rgb(255, 210, 193);

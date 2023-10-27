@@ -48,10 +48,7 @@ const newColumn = (event) => {
     } 
     
     var newColumn = document.createElement('td');
-    newColumn.oncontextmenu = (event) => {
-        event.preventDefault();
-        console.log('Open context menu');
-    }
+    newColumn.setAttribute('oncontextmenu', 'openContextMenu(event)');
     newColumn.innerHTML += '<input class="column-heading" type="text" name="columns">';
 
     // Create custom context menu for each column
@@ -96,6 +93,13 @@ const newEntry = (event) => {
     
 }
 
+// Opens context menu for a column
+const openContextMenu = (event) => {
+
+    // Prevent default context menu
+    event.preventDefault();
+
+}
 
 // Increase cell size to view overflow content
 const viewCell = (event) => {

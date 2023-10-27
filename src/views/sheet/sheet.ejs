@@ -18,7 +18,7 @@
     
                             <% sheet.columns.forEach((column) => { %>
                                 <td>
-                                    <input class="column-heading" type="text" name="columns" value="<%- column %>">
+                                    <input class="column-heading" oncontextmenu="openContextMenu(event)" type="text" name="columns" value="<%- column %>">
                                 </td>
                             <% }) %>
     

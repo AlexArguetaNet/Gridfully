@@ -4,9 +4,9 @@
         <div class="container user-content">
             <nav>
                 <div class="content">
-                    <h4>Your Sheets</h4>
+                    <p>Your Sheets</p>
                     <div class="links">
-                        <a href="/sheet/create">+ New Sheet</a>
+                        <a href="/sheet/create">+ <i class="fa-solid fa-table-cells"></i> Sheet</a>
                     </div>
                 </div>
             </nav>
@@ -25,9 +25,11 @@
 
                         <% sheets.forEach((sheet) => { %>
 
-                            <div class="list-item">
-                                <a href="/sheet/<%- sheet._id %>"><%- sheet.name %></a>
-                            </div>
+                            <a href="/sheet/<%- sheet._id %>">
+                                <div class="list-item">
+                                    <i class="fa-solid fa-table-cells"></i> <%- sheet.name %>
+                                </div>
+                            </a>
 
                         <% }); %>
 
