@@ -1,41 +1,47 @@
 <%- include('../partials/header.ejs') %>
 
     <div class="sheet-page">
+        
         <form action="/sheet/update/<%- sheet._id %>?_method=PUT" method="POST">
             
             <input id="sheet-title" type="text" name="name" value="<%- sheet.name %>">
             <input type="submit" value="Save">
-            <div class="sheet-table">
 
+            <div class="content">
+            
+                <div class="sheet-table">
 
-                <table id="sheet">
-                
-                    <button onclick="newColumn(event)">+ Column</button>
-                    <tr id="sheet-heading">
-
-                        <% sheet.columns.forEach((column) => { %>
-                            <td>
-                                <input class="column-heading" type="text" name="columns" value="<%- column %>">
-                            </td>
-                        <% }) %>
-
-                    </tr>
-
-                    <% for (const entry in sheet.entries) { %>
-                        <tr class="entry">
-                            <% sheet.entries[entry].forEach((cellContent) => { %>
-                                <td class="cell">
-                                    <input type="text" name="<%- entry %>" value="<%- cellContent %>">
+                    <table id="sheet">
+                    
+                        <button onclick="newColumn(event)">+ Column</button>
+                        <tr id="sheet-heading">
+    
+                            <% sheet.columns.forEach((column) => { %>
+                                <td>
+                                    <input class="column-heading" type="text" name="columns" value="<%- column %>">
                                 </td>
                             <% }) %>
+    
                         </tr>
-                    <% } %>
-
-                    
-                </table>
-        
-                <button onclick="newEntry(event)">+ Entry</button>
+    
+                        <% for (const entry in sheet.entries) { %>
+                            <tr class="entry">
+                                <% sheet.entries[entry].forEach((cellContent) => { %>
+                                    <td class="cell">
+                                        <input type="text" name="<%- entry %>" value="<%- cellContent %>" ondblclick="viewCell(event)">
+                                    </td>
+                                <% }) %>
+                            </tr>
+                        <% } %>
+    
+                        
+                    </table>
+            
+                    <button onclick="newEntry(event)">+ Entry</button>
+                </div>
+                
             </div>
+            
 
         </form>
 

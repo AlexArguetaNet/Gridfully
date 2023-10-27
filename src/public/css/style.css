@@ -321,6 +321,12 @@ nav .account-button img {
     height: fit-content;
     color: black;
 }
+.sheet-page .content {
+    background-color: rgb(239, 255, 250);
+    margin-top: 30px;
+    height: 100vh;
+    border-top: 1px dashed rgb(207, 207, 207);
+}
 .sheet-table{
     width: 100%;
     overflow: auto;

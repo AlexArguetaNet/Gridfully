@@ -97,4 +97,11 @@ const newEntry = (event) => {
 }
 
 
+// Increase cell size to view overflow content
+const viewCell = (event) => {
+
+    event.target.style.width = 'fit-content';
+
+}
+
 
