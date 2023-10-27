@@ -1,27 +1,36 @@
 <%- include('../partials/header.ejs') %>
 
     <div class="sheet-page">
-        <form action="/sheet/update?_method=PUT" method="POST">
-            <% 
-                if (locals.sheet) {
-                    var name = sheet.name;
-                } else {
-                    var name = 'New Sheet';
-                }
-            %>
-            <input id="sheet-title" type="text" name="name" value="<%- name %>">
+        <form action="/sheet/update/<%- sheet._id %>?_method=PUT" method="POST">
+            
+            <input id="sheet-title" type="text" name="name" value="<%- sheet.name %>">
             <input type="submit" value="Save">
             <div class="sheet-table">
 
-                <button onclick="newColumn(event)">+ Column</button>
 
                 <table id="sheet">
                 
+                    <button onclick="newColumn(event)">+ Column</button>
                     <tr id="sheet-heading">
 
-                        
+                        <% sheet.columns.forEach((column) => { %>
+                            <td>
+                                <input class="column-heading" type="text" name="columns" value="<%- column %>">
+                            </td>
+                        <% }) %>
 
                     </tr>
+
+                    <% for (const entry in sheet.entries) { %>
+                        <tr class="entry">
+                            <% sheet.entries[entry].forEach((cellContent) => { %>
+                                <td class="cell">
+                                    <input type="text" name="<%- entry %>" value="<%- cellContent %>">
+                                </td>
+                            <% }) %>
+                        </tr>
+                    <% } %>
+
                     
                 </table>
         

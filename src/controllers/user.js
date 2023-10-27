@@ -7,7 +7,6 @@ const getHomePage = async (req, res, next) => {
     const userId = req.params.userId;
 
     const sheets = await Sheet.find({ user_id: userId });
-    console.log(sheets);
 
     User.findById({ _id: req.params.userId })
     .then((userDoc) => {

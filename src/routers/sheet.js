@@ -5,6 +5,6 @@ const router = Router();
 
 router.get('/create', controller.createSheet);
 router.get('/:sheetId', controller.getSheet);
-router.put('/update', controller.updateSheet);
+router.put('/update/:sheetId', controller.updateSheet);
 
 module.exports = router;

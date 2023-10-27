@@ -24,7 +24,6 @@ const getSheet = (req, res, next) => {
 // POST: Create a new sheet and add it to the database
 const createSheet = (req, res, next) => {
 
-    console.log(req.session.user);
     const userId = req.session.user._id;
 
 
@@ -43,16 +42,30 @@ const createSheet = (req, res, next) => {
 // POST: Update sheet
 const updateSheet = (req, res, next) => {
 
-    // TODO: Finish implementing update feature
 
+    // Get the names of the sheet and columns
     const { name, columns } = req.body;
 
+    // Remove the name and columns from the request body
     delete req.body.name;
     delete req.body.columns;
+        
+    // Create object to store into the database
+    const sheet = {
+        name: name,
+        columns: columns,
+        entries: req.body
+    }
 
-    console.log(req.body);
-
-    res.redirect('/');
+    // Get sheet Id from the route parameter and update the
+    // sheet in the database
+    Sheet.findByIdAndUpdate({ _id: req.params.sheetId }, sheet)
+    .then((sheetDoc) => {
+        res.redirect(`/sheet/${ sheetDoc._id }`);
+    })
+    .catch((err) => {
+        res.json({ func: 'updateSheet()', msg: err });
+    });
 
 }
 

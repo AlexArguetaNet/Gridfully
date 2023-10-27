@@ -48,7 +48,14 @@ const newColumn = (event) => {
     } 
     
     var newColumn = document.createElement('td');
+    newColumn.oncontextmenu = (event) => {
+        event.preventDefault();
+        console.log('Open context menu');
+    }
     newColumn.innerHTML += '<input class="column-heading" type="text" name="columns">';
+
+    // Create custom context menu for each column
+
 
     sheetHeading.appendChild(newColumn);
 
