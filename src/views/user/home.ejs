@@ -27,7 +27,12 @@
 
                             <a href="/sheet/<%- sheet._id %>">
                                 <div class="list-item">
-                                    <i class="fa-solid fa-table-cells"></i> <%- sheet.name %>
+                                    <div>
+                                        <p><i class="fa-solid fa-table-cells"></i> <%- sheet.name %></p>
+                                    </div>
+                                    <div class="sheet-info">
+                                        <p><%- Object.keys(sheet.entries).length %> Entries</p>
+                                    </div>
                                 </div>
                             </a>
 

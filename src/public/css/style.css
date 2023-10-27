@@ -332,6 +332,11 @@ nav .account-button img {
 .list a:hover {
     background-color: rgb(246, 245, 255);
 }
+.list-item .sheet-info {
+    margin-left: auto;
+    padding-right: 20px;
+    color: rgb(174, 174, 174);
+}
 
 /* sheet page */
 #sheet-title {
